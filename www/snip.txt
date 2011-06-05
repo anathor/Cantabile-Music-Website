@@ -1,0 +1,31 @@
+				<div id="box">
+					<h3>New Website</h3>
+					<p>
+						Welcome to the new Cantabile Music website.
+					</p>
+				</div>
+				<div id="box">
+					<h3>Student Login</h3>
+					<form id="frmLogin" method="post" action="index.php">
+                        Student Id: <input id="txtStudentId" name="txtStudentId" type="text" value="<?php if( isset($_POST['txtStudentId']) ) print $_POST['txtStudentId']; ?>" />
+                        <br />
+                            <?php
+
+                                if( isset($_POST['txtStudentId']) && $_POST['txtStudentId'] == null )
+                                    print "Error: Student Id cannot be blank.";
+
+                            ?>
+                            <?php
+
+                                if( $error )
+                                {
+                                    print $error;
+                                    $error = null;
+                                }
+
+                            ?>
+                        <br />
+                        <input id="btnSubmit" type="Submit" value="Login" />
+                        <input id="btnClear" type="Button" value="Clear" onclick="btnClear_Click(event)" />
+                    </form>
+				</div>
